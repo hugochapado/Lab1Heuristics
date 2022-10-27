@@ -1,0 +1,27 @@
+data;
+
+set STOPS := S0 S1 S2 S3 S4;
+set NONLASTSTOPS := S1 S2 S3;
+set FLUX := F0 F1 F2 F3 F4;
+set NONLASTFLUX := F1 F2 F3 
+
+param kilometers: S0 S1 S2 S3 S4 :=
+S0 999999 8 10 10 999999
+S1 999999 999999 3 7 6
+S2 999999 3 999999 5 7 
+S3 999999 7 5 999999 4
+S4 999999 999999 999999 999999 999999;
+
+param students := 
+S0 0
+S1 15
+S2 5 
+S3 10 
+S4 0;
+
+param limitFlux:= 20;
+param numberOfBuses:= 3;
+param busCost:= 120;
+param kilometerCost;= 5;
+
+end;
