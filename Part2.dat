@@ -1,0 +1,41 @@
+data;
+
+set STOPS := Parking S1 S2 S3 School;
+set NONLASTSTOPS := S1 S2 S3;
+set FLUX := Parking S1 S2 S3 School;
+set NONLASTFLUX := S1 S2 S3;
+set PEOPLE := A1 A2 A3 A4 A5 A6 A7 A8;
+
+param limitFlux:= 4;
+param numberOfBuses:= 3;
+param busCost:= 120;
+param kilometerCost:= 5;
+
+param kilometers: Parking S1 S2 S3 School :=
+	Parking 999999 8 10 10 999999
+	S1 999999 999999 3 7 6
+	S2 999999 3 999999 5 7 
+	S3 999999 7 5 999999 4
+	School 999999 999999 999999 999999 999999
+;
+
+param posiblestops: A1 A2 A3 A4 A5 A6 A7 A8 := 
+	Parking 0 0 0 0 0 0 0 0
+	S1 1 1 1 1 1 0 0 0
+	S2 0 0 0 1 1 0 0 0
+	S3 0 0 0 1 1 1 1 1
+	School 0 0 0 0 0 0 0 0
+;
+
+param siblings: A1 A2 A3 A4 A5 A6 A7 A8 := 
+	A1 0 0 0 0 0 0 0 0
+	A2 0 0 0 0 0 0 0 0
+	A3 0 0 0 0 0 0 0 0
+	A4 0 0 0 0 1 0 0 0
+	A5 0 0 0 0 1 0 0 0
+	A6 0 0 0 0 0 0 0 0
+	A7 0 0 0 0 0 0 0 0
+	A8 0 0 0 0 0 0 0 0
+;
+
+end;
